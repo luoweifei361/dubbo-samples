@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	
+	<!--  应用名：用于在调用链路中区分不同的服务调用方及提供方 -->
+	<dubbo:application name="dubbo-provider" />   
+	
+	<!--  注册中心方式及列表 -->
+	<dubbo:registry address="zookeeper://127.0.0.1:2181" />
+	
+	<!-- 以spring方式定义一个服务的实现bean -->
+	<bean id="remoteService" class="dubbo.provider.demo.api.iml.RemoteServiceApiImpl" />
+	
+	<!-- 以RemoteServiceApi接口形式暴露这个服务 -->
+	<dubbo:service interface="dubbo.api.demo.api.RemoteServiceApi" ref="remoteService" />
+	
+</beans>
