@@ -9,7 +9,7 @@
 	<dubbo:application name="dubbo-provider" />   
 	
 	<!--  注册中心方式及列表 -->
-	<dubbo:registry address="zookeeper://127.0.0.1:2181" />
+	<dubbo:registry address="zookeeper://192.168.5.194:2181" />
 	
 	<!-- 以spring方式定义一个服务的实现bean -->
 	<bean id="remoteService" class="dubbo.provider.demo.api.iml.RemoteServiceApiImpl" />
