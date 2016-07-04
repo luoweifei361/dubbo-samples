@@ -15,9 +15,8 @@ public class RemoteServiceApiImpl implements RemoteServiceApi {
 	@Override
 	public String getRpcInfo() {
 
-		return String.format("[client info:%s]===>[remote info:%s]", RpcContext
-				.getContext().getLocalAddress(), RpcContext.getContext()
-				.getRemoteAddress());
+		return String.format("[服务消费者 info:%s]===>[服务提供者 info:%s]",RpcContext.getContext()
+				.getRemoteAddress(), RpcContext.getContext().getLocalAddress());
 	}
 
 	@Override
