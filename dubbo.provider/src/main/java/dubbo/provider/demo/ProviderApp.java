@@ -16,10 +16,10 @@ import org.springframework.context.annotation.ImportResource;
 @Configuration
 @ComponentScan
 @EnableAutoConfiguration
-public class PoviderApp {
+public class ProviderApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(PoviderApp.class, args);
+        SpringApplication.run(dubbo.provider.demo.ProviderApp.class, args);
     }
 
 }
